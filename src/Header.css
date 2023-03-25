@@ -1,0 +1,80 @@
+.header {
+    background-color: #131921;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    font-size: 0.8rem;
+    z-index: 50;
+    height: 60px;
+}
+.link >img {
+    height: 60px;
+    margin: 0 20px;
+}
+.nav--address {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.nav--location--logo {
+    height: 30px;
+}
+.nav--address--block {
+    color: white;
+}
+.nav--address--block > h4 {
+    font-size: 14px;
+}
+.nav--search {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+    flex: 1;
+}
+.nav--searchbox{
+    height: 40px;
+    padding: 5px;
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    text-indent: 15px;
+}
+.nav--searchicon {
+    height: 38px;
+    background-color: orange;
+    padding: 10px;
+    margin-top: 1px;
+    border-radius: 0 10px 10px 0;
+}
+
+.nav--linkbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    align-items: center;
+}
+.nav--linkbar--login {
+    color: white;
+    text-decoration: none;
+}
+.nav--linkbar--login > div > h4 {
+    font-size: 14px;
+}
+.nav--linkbar--orders {
+    color: white;
+    text-decoration: none;
+}
+.nav--linkbar--orders > div > h4 {
+    font-size: 14px;
+}
+.nav--cart {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+.nav--cart >img {
+    height: 40px;
+    background-color: transparent;
+    color: white;
+}

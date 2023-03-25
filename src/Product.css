@@ -1,0 +1,36 @@
+.product {
+    margin: 30px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.product > p {
+    font-weight: 600;
+    font-family: "Poppins";
+}
+.price_rating {
+    display: flex;
+}
+.price_rating > p {
+    margin-right: 10px;
+    font-weight: 300;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body >img {
+    height: 200px;
+    object-fit: contain;
+    margin: 20px;
+}
+.body > button {
+    width: 150px;
+}
