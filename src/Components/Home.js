@@ -1,7 +1,7 @@
 import React from 'react'
-import "./Home.css"
+import "../CSS-Files/Home.css"
 import Product from './Product'
-import productPropsArray from './productPropsArray';
+import productPropsArray from '../productPropsArray';
 
 function Home() {
   return (

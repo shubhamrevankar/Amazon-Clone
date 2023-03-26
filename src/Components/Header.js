@@ -1,10 +1,22 @@
 // rfce === boilerplate
 import React from 'react'
-import './Header.css'
+import '../CSS-Files/Header.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
+import { useStateValue } from '../StateProvider';
+import { auth } from '../firebase';
 
 function Header() {
+
+    const [{ basket,user }] = useStateValue();
+
+    // console.log(basket);
+
+    const login = () => {
+        if(user) {
+            auth.signOut();
+        }
+    }
+
   return (
     <nav className='header'>
         <Link className="link" to="/">
@@ -24,10 +36,10 @@ function Header() {
         </div>
         <div className='nav--linkbar'>
             {/* dropdown menu of country should be added */}
-            <Link to="/login" className='nav--linkbar--login'>
-                <div>
-                    <p>Hello</p>
-                    <h4>Sign in</h4>
+            <Link to={!user && "/login"} className='nav--linkbar--login'>
+                <div onClick={login}>
+                    <p>Hello {user?.email}</p>
+                    <h4>{user ? "Sign Out" : "Sign In"}</h4>
                 </div>
             </Link>
             <Link to="/login" className='nav--linkbar--orders'>
@@ -38,7 +50,7 @@ function Header() {
             </Link>
             <Link to="/checkout" className='nav--cart'>
                 <img src="https://www.citypng.com/public/uploads/preview/hd-shopping-cart-white-logo-icon-transparent-png-11640441682ecem2ohejv.png" />
-                <span>0</span>
+                <span>{basket?.length}</span>
             </Link>
         </div>
     </nav>
