@@ -9,6 +9,7 @@ function Product(props) {
   const [ { basket } , dispatch] = useStateValue();
 
   function addToBasket(){
+
     //Add item to basket
     dispatch({
       type: 'ADD_TO_BASKET',
@@ -17,7 +18,8 @@ function Product(props) {
         title: props.product.name,
         img: props.product.img,
         price: props.product.price,
-        rating: props.product.rating
+        rating: props.product.rating,
+        count: 1
       }
     })
   }

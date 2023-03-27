@@ -31,4 +31,44 @@
     width: 200px;
     margin-top: 20px;
 }
-    
+
+
+
+/* Added */
+
+.counter {
+    display: flex;
+    align-items: center;
+    width: 65px;
+    justify-content: space-between;
+}
+
+.product_count {
+    align-content: center;
+    background-color: rgb(195, 192, 188);
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.count {
+    margin-bottom: -10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product_count_p {
+    margin-top: -5px;
+    margin-left: -2.5px;
+    margin-right: auto;
+    font-weight: 700;
+}
+
+.product_count_m {
+    margin-top: -5px;
+    margin-right: auto;
+    font-weight: 700;
+}

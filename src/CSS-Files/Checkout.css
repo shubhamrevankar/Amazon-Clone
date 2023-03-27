@@ -3,6 +3,7 @@
     width: 100%;
     background-color: #EAEDED!important;
     padding-top: 70px;
+    padding-right: 370px;
 }
 .shopping_cart {
     flex: 1;
@@ -16,6 +17,7 @@
     /* color: #a76553; */
     padding: 20px;
     display: flex;
+    margin: 37px 0;
 }
 .root_link {
     margin: 0 10px;
@@ -29,7 +31,11 @@
     flex-direction: column;
     padding: 20px;
     margin: 20px;
-    height: 210px;
+    height: 250px;
+    width: 330px;
+    position: fixed;
+    right: 10px;
+    justify-content: space-between;
 }
 .checkout_products > div {
     display: flex;

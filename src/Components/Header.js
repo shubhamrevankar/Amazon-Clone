@@ -4,6 +4,8 @@ import '../CSS-Files/Header.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
 import { auth } from '../firebase';
+import { getTotalItems } from '../reducer';
+
 
 function Header() {
 
@@ -50,7 +52,7 @@ function Header() {
             </Link>
             <Link to="/checkout" className='nav--cart'>
                 <img src="https://www.citypng.com/public/uploads/preview/hd-shopping-cart-white-logo-icon-transparent-png-11640441682ecem2ohejv.png" />
-                <span>{basket?.length}</span>
+                <span>{getTotalItems(basket)}</span>
             </Link>
         </div>
     </nav>

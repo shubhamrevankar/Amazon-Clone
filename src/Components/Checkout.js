@@ -7,7 +7,7 @@ import CheckoutProduct from './CheckoutProduct';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CurrencyFormat from 'react-currency-format';
-import { getBasketTotal } from '../reducer';
+import { getBasketTotal,getTotalItems } from '../reducer';
 
 function Checkout() {
 
@@ -42,7 +42,7 @@ function Checkout() {
                 <p>Select this option at checkout. Details</p></div></div>
                 
                 <div>
-                <p className='subtotal'>Subtotal ({basket.length} item): </p>
+                <p className='subtotal'>Subtotal ({getTotalItems(basket)} item): </p>
                 <CurrencyFormat
                     renderText={(value) => (
                     <>
