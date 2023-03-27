@@ -11,7 +11,12 @@
 }
 
 .product_container {
-    margin-top: -300px;
     position: relative;
     z-index: 10;
+    margin: -350px 40px 0px -20px;
 }
+.product_container > div {
+    margin-bottom: 20px;
+}
+
+

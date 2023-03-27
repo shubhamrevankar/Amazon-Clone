@@ -6,8 +6,10 @@
     align-items: center;
     background-color: white;
     padding: 20px;
-    width: 350px;
-    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    /* border-radius: 20px; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .product > p {
@@ -28,6 +30,7 @@
 }
 .body >img {
     height: 200px;
+    width: 300px;
     object-fit: contain;
     margin: 20px;
 }

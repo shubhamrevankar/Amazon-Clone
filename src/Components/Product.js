@@ -15,10 +15,10 @@ function Product(props) {
       type: 'ADD_TO_BASKET',
       item: {
         id: props.product.id,
-        title: props.product.name,
-        img: props.product.img,
-        price: props.product.price,
-        rating: props.product.rating,
+        title: props.product.title?props.product.title:"",
+        img: props.product.image?props.product.image:"",
+        price: props.product.price?props.product.price:"",
+        rating: Math.round(props.product.rating.rate?props.product.rating.rate:2),
         count: 1
       }
     })
@@ -26,15 +26,15 @@ function Product(props) {
 
   return (
     <div className='product'>
-      <p>{props.product.name}</p>
+      <p>{props.product.title?props.product.title:""}</p>
       <div className='price_rating'>
-          <p>₹{props.product.price}</p>
+          <p>₹{props.product.price?props.product.price:0}</p>
           {
-              Array(props.product.rating).fill().map(() => (<span>⭐</span>))
+              Array(Math.round(props.product.rating.rate?props.product.rating.rate:0)).fill().map(() => (<span>⭐</span>))
           }
       </div>
       <div className='body'>
-        <img src={props.product.img}/>
+        <img src={props.product.image?props.product.image:""}/>
         <Button onClick={addToBasket}>Add to Cart</Button>
       </div>
     </div>
