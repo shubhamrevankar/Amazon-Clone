@@ -9,6 +9,15 @@ import { getTotalItems } from '../reducer';
 
 function Header() {
 
+    function scrollToTop(){
+    
+        window.scrollTo({
+            top: 0, 
+            behavior: 'smooth'
+        });
+    
+    }
+
     const [{ basket,user }] = useStateValue();
 
     // console.log(basket);
@@ -50,7 +59,7 @@ function Header() {
                     <h4>& Orders</h4>
                 </div>
             </Link>
-            <Link to="/checkout" className='nav--cart'>
+            <Link to="/checkout" className='nav--cart' onClick={scrollToTop}>
                 <img src="https://www.citypng.com/public/uploads/preview/hd-shopping-cart-white-logo-icon-transparent-png-11640441682ecem2ohejv.png" />
                 <span>{getTotalItems(basket)}</span>
             </Link>
