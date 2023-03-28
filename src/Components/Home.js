@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useStateValue } from '../StateProvider';
 import "../CSS-Files/Home.css"
 import Product from './Product'
 import productPropsArray from '../productPropsArray';
@@ -11,6 +12,8 @@ function Home() {
   // .then(json=>(fetchedData = json))
 
   // console.log(fetchedData);
+
+  const [{ category }] = useStateValue();
 
   const [data, setData] = useState([]);
 
@@ -30,8 +33,9 @@ function Home() {
     dataFetch();
   }, []);
 
-    console.log(data);
 
+    // console.log(data);
+    
 
   return (
     <div className='home'>
@@ -39,11 +43,16 @@ function Home() {
         <div class="row product_container justify-content-center">
           {
             data.map(productProps => 
-              (
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                  <Product product={productProps} />
-                </div>
-              )
+              {
+                // console.log(productProps);
+                if(category==="ALL" || productProps.category === category){
+                  return(
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                      <Product product={productProps} />
+                    </div>
+                  )
+                }
+              }
             )
           }
         </div>

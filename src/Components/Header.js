@@ -5,9 +5,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
 import { auth } from '../firebase';
 import { getTotalItems } from '../reducer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DropdownCategories from './DropdownCategories'
 
 
-function Header() {
+
+function Header(props) {
 
     function scrollToTop(){
     
@@ -41,7 +44,9 @@ function Header() {
             </div>
         </div>
         <div className='nav--search'>
-            {/* dropdown menu of categories should be added */}
+            <div>
+                <DropdownCategories/>
+            </div>
             <input placeholder='Search Amazon.in' className='nav--searchbox'/>
             <img src='https://cdn-icons-png.flaticon.com/512/3917/3917132.png' className='nav--searchicon' />
         </div>

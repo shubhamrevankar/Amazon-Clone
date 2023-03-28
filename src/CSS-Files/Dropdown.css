@@ -1,0 +1,9 @@
+
+.dropdownCategories {
+    height: 40px;
+    background-color: #6c757d;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 0 0 5px;
+}

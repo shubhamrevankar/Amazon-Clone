@@ -26,6 +26,7 @@
 .nav--address--block > h4 {
     font-size: 14px;
 }
+
 .nav--search {
     display: flex;
     align-items: center;
@@ -36,7 +37,7 @@
     height: 40px;
     padding: 5px;
     flex: 1;
-    border-radius: 10px 0 0 10px;
+    border-radius: 0;
     text-indent: 15px;
 }
 .nav--searchicon {
@@ -44,7 +45,7 @@
     background-color: orange;
     padding: 10px;
     margin-top: 1px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 5px 5px 0;
 }
 
 .nav--linkbar {
@@ -78,3 +79,4 @@
     background-color: transparent;
     color: white;
 }
+
