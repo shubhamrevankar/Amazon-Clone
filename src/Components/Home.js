@@ -13,7 +13,7 @@ function Home() {
 
   // console.log(fetchedData);
 
-  const [{ category }] = useStateValue();
+  const [{ category,search }] = useStateValue();
 
   const [data, setData] = useState([]);
 
@@ -45,7 +45,17 @@ function Home() {
             data.map(productProps => 
               {
                 // console.log(productProps);
-                if(category==="ALL" || productProps.category === category){
+                if(
+                    (
+                      (category==="ALL") || 
+                      (productProps.category === category) 
+                    ) 
+                    && 
+                    (
+                      (search=="") || 
+                      ((productProps.title.toLowerCase()).includes(search.toLowerCase()))
+                    )
+                  ){
                   return(
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                       <Product product={productProps} />

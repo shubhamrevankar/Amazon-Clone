@@ -31,10 +31,10 @@ function Example() {
           <DropdownItem header>Categories</DropdownItem>
           <DropdownItem divider />
           <DropdownItem onClick={() => setCategoryFun("ALL")} >ALL</DropdownItem>
-          <DropdownItem onClick={() => setCategoryFun("men's clothing")} >Men's Clothing</DropdownItem>
           <DropdownItem onClick={() => setCategoryFun("jewelery")} >Jewelery</DropdownItem>
           <DropdownItem onClick={() => setCategoryFun("electronics")} >Electronics</DropdownItem>
           <DropdownItem onClick={() => setCategoryFun("women's clothing")} >Women's Clothing</DropdownItem>
+          <DropdownItem onClick={() => setCategoryFun("men's clothing")} >Men's Clothing</DropdownItem>
         </DropdownMenu>
       </Dropdown>
     </div>

@@ -1,5 +1,5 @@
 // rfce === boilerplate
-import React from 'react'
+import React,{ useState } from 'react'
 import '../CSS-Files/Header.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
@@ -10,7 +10,10 @@ import DropdownCategories from './DropdownCategories'
 
 
 
-function Header(props) {
+function Header() {
+
+    const [{ basket,user,search },dispatch] = useStateValue();
+
 
     function scrollToTop(){
     
@@ -21,8 +24,42 @@ function Header(props) {
     
     }
 
-    const [{ basket,user }] = useStateValue();
+    const [currentSearch,setCurrentSearch] = useState("")
 
+    function handleChange(action){
+        // console.log(action);
+        // console.log(action.target.value);
+        setCurrentSearch(action.target.value);
+    }
+
+    function handleKeyDown(action){
+        if(action.key === "Enter"){
+            handleClickSearch();
+        }
+    }
+
+    function handleClickSearch(){
+        dispatch({
+            type: 'SET_SEARCH',
+            search: currentSearch
+        })
+        setCurrentSearch(currentSearch);
+    }
+
+    function handleReset(){
+        dispatch({
+            type: 'SET_SEARCH',
+            search: ""
+        })
+        dispatch({
+            type: 'SET_CATEGORY',
+            category: "ALL"
+        })
+        setCurrentSearch("");
+        scrollToTop();
+    }
+
+    
     // console.log(basket);
 
     const login = () => {
@@ -31,9 +68,11 @@ function Header(props) {
         }
     }
 
+    // console.log(`the value of search is ${search}`)
+
   return (
     <nav className='header'>
-        <Link className="link" to="/">
+        <Link className="link" to="/" onClick={handleReset}>
             <img src='https://logos-world.net/wp-content/uploads/2020/04/Amazon-Emblem.jpg'/>
         </Link>
         <div className='nav--address'>
@@ -47,8 +86,20 @@ function Header(props) {
             <div>
                 <DropdownCategories/>
             </div>
-            <input placeholder='Search Amazon.in' className='nav--searchbox'/>
-            <img src='https://cdn-icons-png.flaticon.com/512/3917/3917132.png' className='nav--searchicon' />
+            <input 
+                placeholder='Search Amazon.in'
+                className='nav--searchbox'
+                value={currentSearch}
+                onChange={handleChange}
+                onKeyDown={handleKeyDown}
+            />
+            <Link to="/">
+                <img 
+                src='https://cdn-icons-png.flaticon.com/512/3917/3917132.png'
+                className='nav--searchicon'
+                onClick={handleClickSearch}
+                />
+            </Link>
         </div>
         <div className='nav--linkbar'>
             {/* dropdown menu of country should be added */}
