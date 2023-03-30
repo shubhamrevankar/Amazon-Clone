@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../CSS-Files/Login.css"
 import { Link,useNavigate } from 'react-router-dom'
 import { auth } from '../firebase'
+import { useStateValue } from '../StateProvider';
 
 function Login() {
 
@@ -9,11 +10,16 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
 
+  const [{ basket },dispatch] = useStateValue();
+  
+
   const login = event => {
     event.preventDefault();
 
     auth.signInWithEmailAndPassword(email,password)
-      .then((auth) => {
+      .then((userCredential) => {
+        // console.log("&&&&&");
+        // console.log(userCredential)
         navigate("/");
       })
       .catch(e => alert(e.message))
@@ -23,7 +29,7 @@ function Login() {
     event.preventDefault();
 
     auth.createUserWithEmailAndPassword(email,password)
-      .then(auth => {
+      .then(userCredential => {
         navigate("/");
       })
       .catch(e => alert(e.message))

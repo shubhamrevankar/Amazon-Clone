@@ -21,12 +21,12 @@ function Checkout() {
                 <h1>Shopping Cart</h1>
                 <hr />
                 {
-                    basket?.length===0? 
+                    (!basket || basket.length===0)? 
                     <div className='cart_empty'><p>Your Cart is empty</p><Link className="root_link" to="/" >Click Here</Link> to Add</div>
                     :
                     <div>
                     {
-                        basket.map(prod => 
+                        basket?.map(prod => 
                         (
                             <div>
                             <CheckoutProduct product={prod} />

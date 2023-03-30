@@ -2,14 +2,15 @@ export const initialState = {
     basket: [],
     user: null,
     category: "ALL",
-    search: ""
+    search: "",
+    address: ""
 };
 
 export const getBasketTotal = (basket) => 
     basket?.reduce((amount, item) => item.price*item.count + amount, 0);
 
 export const getTotalItems = (basket) => 
-    basket?.reduce((amount, item) => item.count + amount, 0);
+    basket?(basket.reduce((amount, item) => item.count + amount, 0)):0;
 
 function reducer(state, action){
     
@@ -24,10 +25,10 @@ function reducer(state, action){
 
 
         case 'ADD_TO_BASKET':
-            console.log(state.basket)
+            // console.log(state.basket)
 
             let oldBasket = [...state.basket];
-            const ind = state.basket.findIndex((basketItem) => (basketItem.id===action.item.id))
+            const ind = state.basket?.findIndex((basketItem) => (basketItem.id===action.item.id))
 
             if(ind >= 0){
                 oldBasket[ind] = {
@@ -62,7 +63,7 @@ function reducer(state, action){
             return {...state, basket: newBasket};
 
         case 'REMOVE_ONE_FROM_BASKET' :
-            console.log(state.basket)
+            // console.log(state.basket)
 
             let oldBasket2 = [...state.basket];
             const ind2 = state.basket.findIndex((basketItem) => (basketItem.id===action.item.id))
@@ -95,6 +96,22 @@ function reducer(state, action){
                 search: action.search
             }
 
+        case 'SET_BASKET':
+            if(action.basket){
+                return {
+                    ...state,
+                    basket: [...action.basket]
+                }
+            }  
+            else{
+                return state
+            } 
+
+        case 'SET_ADDRESS':
+            return {
+                ...state,
+                address: action.city
+            }
         default:
             return state;
     }

@@ -44,7 +44,7 @@ function Home() {
           {
             data.map(productProps => 
               {
-                // console.log(productProps);
+                console.log(productProps);
                 if(
                     (
                       (category==="ALL") || 

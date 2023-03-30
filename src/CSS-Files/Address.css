@@ -1,0 +1,63 @@
+.address {
+    width: 500px;
+    /* background-color: rgb(170, 186, 25); */
+    margin: 20px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.address__logo {
+    width: 100px;
+    object-fit: contain;
+}
+
+
+.address__container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border: 1px solid lightgray;
+    padding: 20px;
+}
+
+.address__container > h1 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.address__container > form > h5 {
+    margin-bottom: 5px;
+}
+
+.address__container > form > input {
+    height: 30px;
+    background-color: white;
+    margin-bottom: 5px;
+    width: 98%;
+}
+
+.address__container > p {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.address__signinButton {
+    background-color: #f0c14b;
+    border-radius: 2px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+}
+
+.address__registerButton {
+    border-radius: 2px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid;
+    border-color: darkgray;
+}

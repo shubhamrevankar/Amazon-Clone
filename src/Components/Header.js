@@ -12,7 +12,7 @@ import DropdownCategories from './DropdownCategories'
 
 function Header() {
 
-    const [{ basket,user,search },dispatch] = useStateValue();
+    const [{ basket,user,search,address },dispatch] = useStateValue();
 
 
     function scrollToTop(){
@@ -75,13 +75,15 @@ function Header() {
         <Link className="link" to="/" onClick={handleReset}>
             <img src='https://logos-world.net/wp-content/uploads/2020/04/Amazon-Emblem.jpg'/>
         </Link>
-        <div className='nav--address'>
-            <img src='https://png.pngtree.com/png-vector/20190508/ourmid/pngtree-vector-location-icon-png-image_1028445.jpg' className='nav--location--logo'/>
-            <div className='nav--address--block'>
-                <p>Hello</p>
-                <h4>Select your address</h4>
+        <Link to="/address" className='nav--address--link'>
+            <div className='nav--address'>
+                <img src='https://png.pngtree.com/png-vector/20190508/ourmid/pngtree-vector-location-icon-png-image_1028445.jpg' className='nav--location--logo'/>
+                <div className='nav--address--block'>
+                    <p>Hello</p>
+                    <h4>{address===""?"Select Your Address":address}</h4>
+                </div>
             </div>
-        </div>
+        </Link>
         <div className='nav--search'>
             <div>
                 <DropdownCategories/>

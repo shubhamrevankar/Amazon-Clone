@@ -12,6 +12,9 @@
     height: 60px;
     margin: 0 20px;
 }
+.nav--address--link {
+    text-decoration: none;
+}
 .nav--address {
     height: 60px;
     display: flex;
