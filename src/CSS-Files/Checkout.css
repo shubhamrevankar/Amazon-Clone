@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     background-color: #EAEDED!important;
-    padding-top: 70px;
+    padding-top: 20px;
     padding-right: 370px;
 }
 .shopping_cart {
@@ -27,6 +27,7 @@
 }
 .checkout_products{
     background-color: white;
+    border: solid #EAEDED;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -61,4 +62,21 @@
 }
 Button {
     margin-top: 15px;
+}
+
+
+.padr0 {
+    padding-right: 0;
+}
+
+.padt250 {
+    padding-top: 200px;
+}
+
+.height160 {
+    height: 160px;
+}
+
+.left10 {
+    left: 10px;
 }

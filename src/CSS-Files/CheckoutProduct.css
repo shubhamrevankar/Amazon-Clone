@@ -61,14 +61,14 @@
 }
 
 .product_count_p {
-    margin-top: -5px;
-    margin-left: -2.5px;
+    margin-top: 10px;
+    margin-left: -3px;
     margin-right: auto;
     font-weight: 700;
 }
 
 .product_count_m {
-    margin-top: -5px;
+    margin-top: 10px;
     margin-right: auto;
     font-weight: 700;
 }

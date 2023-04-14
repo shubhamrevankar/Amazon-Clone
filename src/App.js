@@ -63,14 +63,16 @@ function App() {
 
 
   return (
-    <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/checkout' element={<Checkout />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/address' element={<Address />} />
-        </Routes>
-    </BrowserRouter>
+    <div className="app" >
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/address' element={<Address />} />
+          </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
