@@ -34,13 +34,38 @@ function Home() {
   }, []);
 
 
+
+
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+
+  	function getCurrentDimension(){
+    	return {
+      		width: window.innerWidth,
+      		height: window.innerHeight
+    	}
+  	}
+  
+  	useEffect(() => {
+    		const updateDimension = () => {
+      			setScreenSize(getCurrentDimension())
+    		}
+    		window.addEventListener('resize', updateDimension);
+    
+		
+    		return(() => {
+        		window.removeEventListener('resize', updateDimension);
+    		})
+  	}, [screenSize])
+
+
+
     // console.log(data);
     
 
   return (
     <div className='home'>
-        <img src='https://m.media-amazon.com/images/I/61+Om+g+8SL._SX3000_.jpg' className='backgroung_img'/>
-        <div class="row product_container justify-content-center">
+        {screenSize.width >= 1000 && <img src='https://m.media-amazon.com/images/I/61+Om+g+8SL._SX3000_.jpg' className='backgroung_img'/> }
+        <div class={`row product_container justify-content-center ${screenSize.width < 1000 ? 'margin40px':'margin-350px'}`}>
           {
             data.map(productProps => 
               {

@@ -2,21 +2,46 @@
     background-color: #131921;
     display: flex;
     align-items: center;
-    position: fixed;
     width: 100%;
     font-size: 0.8rem;
     z-index: 50;
     height: 60px;
 }
-.link >img {
+
+.bg {
+    background-color: #131921;
+}
+.wc {
+    color: red !important;
+}
+.center {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    margin: 0 !important;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.link > img {
+    margin: 0 0 0 20px;
+    background-color: #131921;
+}
+.link > .logo_small {
+    height: 40px;
+}
+.link > .logo_large {
     height: 60px;
-    margin: 0 20px;
 }
 .nav--address--link {
     text-decoration: none;
 }
 .nav--address {
-    height: 60px;
+    height: 40px;
     display: flex;
     align-items: center;
 }
@@ -25,9 +50,17 @@
 }
 .nav--address--block {
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50px;
+    align-items: baseline;
 }
 .nav--address--block > h4 {
     font-size: 14px;
+}
+.nav--address--block > p {
+    margin: 0;
 }
 
 .nav--search {
@@ -42,6 +75,7 @@
     flex: 1;
     border-radius: 0;
     text-indent: 15px;
+    width: 0;
 }
 .nav--searchicon {
     height: 38px;
@@ -55,6 +89,20 @@
     box-shadow: 0 0px 0px 0 white,0 0px 10px 0 white;
 }
 
+
+
+.flex {
+    display: flex;
+}
+
+
+
+
+
+.nav-link {
+    padding: 0 !important;
+}
+
 .nav--linkbar {
     display: flex;
     justify-content: space-evenly;
@@ -65,9 +113,31 @@
     color: white;
     text-decoration: none;
 }
+.nav--linkbar--login > div {
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    justify-content: space-between;
+}
 .nav--linkbar--login > div > h4 {
     font-size: 14px;
+    /* margin: 7px; */
 }
+.nav--linkbar--login > div > p {
+    margin: 0;
+}
+
+
+.container {
+    max-width: 2000px !important;
+    align-items: center;
+    display: flex;
+}
+
+.height50 {
+    height: 50px;
+}
+
 .nav--linkbar--orders {
     color: white;
     text-decoration: none;
@@ -76,6 +146,8 @@
     font-size: 14px;
 }
 .nav--cart {
+    padding-top: 0 10px;
+    margin: 0 10px;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -87,3 +159,34 @@
     color: white;
 }
 
+
+
+
+/* Bootstrap-nav */
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    /* padding-top: 20px; */
+}
+
+.show {
+    padding-top: 20px;
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    text-align: center;
+    margin: auto;
+  }
+  .nav-link {
+    margin: auto;
+    height: 40px;
+    font-weight: 500;
+  }
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
